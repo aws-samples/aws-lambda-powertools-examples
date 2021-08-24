@@ -1,11 +1,7 @@
-## My Project
+## aws-lambda-powertools-examples
 
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+This repo holds example projects demoing different types of utilities provided by aws-lambda-powertools project for different 
+runtimes.
 
 ## Security
 
