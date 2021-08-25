@@ -243,3 +243,6 @@ $RECYCLE.BIN/
 # Build folder
 
 */build/*
+
+.aws-sam
+*.toml
