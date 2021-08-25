@@ -52,7 +52,7 @@ Resources:
           Type: Schedule
           Properties:
             Schedule: 'rate(5 minutes)'
-            Name: DemoMessageProducer
+            Name: !Join ["-", ["message-producer-schedule", !Select [0, !Split [-, !Select [2, !Split [/, !Ref AWS::StackId ]]]]]]
             Description: Produce message to SQS via a Lambda function
             Enabled: true
 
