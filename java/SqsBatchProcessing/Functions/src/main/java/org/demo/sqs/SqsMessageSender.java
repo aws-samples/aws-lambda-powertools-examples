@@ -1,16 +1,9 @@
 
 package org.demo.sqs;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.stream.IntStream;
-
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.ScheduledEvent;
-import com.amazonaws.util.JodaTime;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.apache.logging.log4j.LogManager;
@@ -23,6 +16,12 @@ import software.amazon.awssdk.services.sqs.model.SendMessageBatchRequestEntry;
 import software.amazon.awssdk.services.sqs.model.SendMessageBatchResponse;
 import software.amazon.lambda.powertools.logging.Logging;
 import software.amazon.lambda.powertools.logging.LoggingUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
