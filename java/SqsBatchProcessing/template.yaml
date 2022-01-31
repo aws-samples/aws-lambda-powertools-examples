@@ -17,8 +17,39 @@ Globals:
         POWERTOOLS_LOGGER_LOG_EVENT: true
 
 Resources:
+  CustomerKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: KMS key for encrypted queues
+      Enabled: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+          - Sid: Allow use of the key
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action:
+              - kms:Decrypt
+              - kms:GenerateDataKey
+            Resource: '*'
+
+  CustomerKeyAlias:
+    Type: AWS::KMS::Alias
+    Properties:
+      AliasName: alias/sqs-key
+      TargetKeyId: !Ref CustomerKey
+
   DemoDlqSqsQueue:
     Type: AWS::SQS::Queue
+    Properties:
+      KmsMasterKeyId: !Ref CustomerKey
 
   DemoSqsQueue:
     Type: AWS::SQS::Queue
@@ -29,6 +60,7 @@ Resources:
             - "DemoDlqSqsQueue"
             - "Arn"
         maxReceiveCount: 2
+      KmsMasterKeyId: !Ref CustomerKey
 
   DemoSQSSenderFunction:
     Type: AWS::Serverless::Function
@@ -47,6 +79,12 @@ Resources:
               - sqs:SendMessageBatch
               - sqs:SendMessage
             Resource: !GetAtt DemoSqsQueue.Arn
+          - Sid: SQSKMSKey
+            Effect: Allow
+            Action:
+              - kms:GenerateDataKey
+              - kms:Decrypt
+            Resource: !GetAtt CustomerKey.Arn
       Events:
         CWSchedule:
           Type: Schedule
@@ -78,6 +116,12 @@ Resources:
                 - sqs:SendMessageBatch
                 - sqs:SendMessage
               Resource: !GetAtt DemoDlqSqsQueue.Arn
+            - Sid: SQSKMSKey
+              Effect: Allow
+              Action:
+                - kms:GenerateDataKey
+                - kms:Decrypt
+              Resource: !GetAtt CustomerKey.Arn
       Events:
         MySQSEvent:
           Type: SQS
