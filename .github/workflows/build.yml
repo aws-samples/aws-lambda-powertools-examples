@@ -5,12 +5,14 @@ on:
     branches:
       - main
     paths:
+      - 'manifest.json'
       - 'java/**'
       - '.github/workflows/**'
   push:
     branches:
       - main
     paths:
+      - 'manifest.json'
       - 'java/**'
       - '.github/workflows/**'
 
