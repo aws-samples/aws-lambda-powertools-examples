@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>powertools</groupId>
-    <artifactId>CoreUtilities</artifactId>
+    <artifactId>Function</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>A sample Hello World created for SAM CLI using powertools core utilities</name>
