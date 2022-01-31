@@ -1,0 +1,11 @@
+{
+  "java11": [
+    {
+      "directory": "java/SqsBatchProcessing",
+      "displayName": "Demos setup of SQS Batch processing via Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "SqsBatchProcessing",
+      "javaVersion": "11"
+    }
+  ]
+}
