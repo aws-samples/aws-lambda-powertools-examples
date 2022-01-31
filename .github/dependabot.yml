@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/java/SqsBatchProcessing/Functions"
+    schedule:
+      interval: "daily"
+    labels:
+      - "maven"
+      - "dependencies"
