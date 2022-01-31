@@ -6,6 +6,13 @@
       "dependencyManager": "maven",
       "appTemplate": "SqsBatchProcessing",
       "javaVersion": "11"
+    },
+    {
+      "directory": "java/CoreUtilities/Function",
+      "displayName": "Demos setup of Core utilities with proxies lambda function using api gateway",
+      "dependencyManager": "maven",
+      "appTemplate": "CoreUtilities",
+      "javaVersion": "11"
     }
   ]
 }

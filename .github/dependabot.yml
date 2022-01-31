@@ -7,3 +7,10 @@ updates:
     labels:
       - "maven"
       - "dependencies"
+  - package-ecosystem: "maven"
+      directory: "/java/CoreUtilities/Functions"
+      schedule:
+        interval: "daily"
+      labels:
+        - "maven"
+        - "dependencies"
