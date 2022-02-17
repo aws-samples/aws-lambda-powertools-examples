@@ -13,6 +13,13 @@
       "dependencyManager": "maven",
       "appTemplate": "CoreUtilities",
       "javaVersion": "11"
+    },
+    {
+      "directory": "java/Idempotency/Function",
+      "displayName": "Demos setup of an idempotent Lambda function using Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "Idempotency",
+      "javaVersion": "11"
     }
   ]
 }
