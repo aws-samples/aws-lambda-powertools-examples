@@ -20,6 +20,13 @@
       "dependencyManager": "maven",
       "appTemplate": "Idempotency",
       "javaVersion": "11"
+    },
+    {
+      "directory": "java/Validation/Function",
+      "displayName": "Demos setup of an validation Lambda function using Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "Validation",
+      "javaVersion": "11"
     }
   ]
 }
