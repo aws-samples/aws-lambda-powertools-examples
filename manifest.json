@@ -27,6 +27,13 @@
       "dependencyManager": "maven",
       "appTemplate": "Validation",
       "javaVersion": "11"
+    },
+    {
+      "directory": "java/Parameters/Function",
+      "displayName": "Demos setup of an parameters Lambda function using Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "Parameters",
+      "javaVersion": "11"
     }
   ]
 }
