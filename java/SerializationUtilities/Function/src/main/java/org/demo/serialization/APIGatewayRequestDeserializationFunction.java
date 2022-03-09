@@ -23,7 +23,7 @@ public class APIGatewayRequestDeserializationFunction implements RequestHandler<
 
         Product product = extractDataFrom(event).as(Product.class);
         LOGGER.info("\n=============== Deserialized request body: ===============");
-        LOGGER.info("body={}\n", product);
+        LOGGER.info("product={}\n", product);
 
         return new APIGatewayProxyResponseEvent()
                     .withHeaders(HEADERS)

@@ -18,8 +18,8 @@ public class SQSEventDeserializationFunction implements RequestHandler<SQSEvent,
     public String handleRequest(SQSEvent event, Context context) {
         List<Product> products = extractDataFrom(event).asListOf(Product.class);
 
-        LOGGER.info("\n=============== Deserialized events: ===============");
-        LOGGER.info("events={}\n", products);
+        LOGGER.info("\n=============== Deserialized messages: ===============");
+        LOGGER.info("products={}\n", products);
 
         return "Number of received messages: " + products.size();
     }

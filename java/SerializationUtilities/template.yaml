@@ -12,7 +12,7 @@ Globals:
 
 
 Resources:
-  APIGatewayDes erializationFunction:
+  APIGatewayDeserializationFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: Function
@@ -57,7 +57,7 @@ Outputs:
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/product/"
   Function:
     Description: "Serialization Lambda Function ARN"
-    Value: !GetAtt APIGatewayDeerializationFunction.Arn
+    Value: !GetAtt APIGatewayDeserializationFunction.Arn
   DemoSqsQueue:
     Description: "ARN for SQS queue"
     Value: !GetAtt DemoSqsQueue.Arn
