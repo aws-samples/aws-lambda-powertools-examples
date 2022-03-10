@@ -34,6 +34,13 @@
       "dependencyManager": "maven",
       "appTemplate": "Parameters",
       "javaVersion": "11"
+    },
+    {
+      "directory": "java/SerializationUtilities/Function",
+      "displayName": "Demos setup of a serialization utilities Lambda functions using Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "SerializationUtilities",
+      "javaVersion": "11"
     }
   ]
 }
