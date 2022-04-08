@@ -37,7 +37,7 @@ Resources:
   HelloWorldStreamFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: HelloWorldFunction
+      CodeUri: Function
       Handler: helloworld.AppStream::handleRequest
       MemorySize: 512
       Tracing: Active
