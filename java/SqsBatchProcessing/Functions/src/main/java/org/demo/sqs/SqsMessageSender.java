@@ -27,7 +27,7 @@ import static java.util.stream.Collectors.toList;
 
 public class SqsMessageSender implements RequestHandler<ScheduledEvent, String> {
 
-    private static final Logger log = LogManager.getLogger();
+    private static final Logger log = LogManager.getLogger(SqsMessageSender.class);
 
     private static final SqsClient sqsClient = SqsClient.builder()
             .httpClient(UrlConnectionHttpClient.create())
