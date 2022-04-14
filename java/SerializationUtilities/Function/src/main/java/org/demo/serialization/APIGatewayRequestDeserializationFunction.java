@@ -14,7 +14,7 @@ import static software.amazon.lambda.powertools.utilities.EventDeserializer.extr
 
 public class APIGatewayRequestDeserializationFunction implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
-    private final static Logger LOGGER = LogManager.getLogger();
+    private final static Logger LOGGER = LogManager.getLogger(APIGatewayRequestDeserializationFunction.class);
     private static final Map<String, String> HEADERS = Map.of(
         "Content-Type", "application/json",
         "X-Custom-Header", "application/json");

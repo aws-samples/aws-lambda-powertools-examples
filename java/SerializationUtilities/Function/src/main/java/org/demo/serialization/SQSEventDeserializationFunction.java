@@ -13,7 +13,7 @@ import static software.amazon.lambda.powertools.utilities.EventDeserializer.extr
 
 public class SQSEventDeserializationFunction implements RequestHandler<SQSEvent, String> {
 
-    private final static Logger LOGGER = LogManager.getLogger();
+    private final static Logger LOGGER = LogManager.getLogger(SQSEventDeserializationFunction.class);
 
     public String handleRequest(SQSEvent event, Context context) {
         List<Product> products = extractDataFrom(event).asListOf(Product.class);

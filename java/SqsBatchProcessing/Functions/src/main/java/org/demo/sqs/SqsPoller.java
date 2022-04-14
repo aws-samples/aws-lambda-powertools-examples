@@ -21,7 +21,7 @@ import static com.amazonaws.services.lambda.runtime.events.SQSEvent.SQSMessage;
  */
 public class SqsPoller implements RequestHandler<SQSEvent, String> {
 
-    Logger log = LogManager.getLogger();
+    Logger log = LogManager.getLogger(SqsPoller.class);
     Random random = new Random(100);
 
     static {

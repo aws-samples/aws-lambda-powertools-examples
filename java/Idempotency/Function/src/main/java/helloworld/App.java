@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
-    private final static Logger log = LogManager.getLogger();
+    private final static Logger log = LogManager.getLogger(App.class);
 
     public App() {
         this(null);

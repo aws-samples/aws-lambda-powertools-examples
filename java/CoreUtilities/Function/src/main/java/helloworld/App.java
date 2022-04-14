@@ -34,7 +34,7 @@ import static software.amazon.lambda.powertools.tracing.TracingUtils.withEntityS
  * Handler for requests to Lambda function.
  */
 public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
-    private final static Logger log = LogManager.getLogger();
+    private final static Logger log = LogManager.getLogger(App.class);
 
     @Logging(logEvent = true, samplingRate = 0.7)
     @Tracing(captureMode = CaptureMode.RESPONSE_AND_ERROR)
